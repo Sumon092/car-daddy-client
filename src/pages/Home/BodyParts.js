@@ -7,7 +7,7 @@ import BodyPart3 from '../../assets/bodyparts/prod1_deposit_opt-350x350.jpg'
 
 const BodyParts = () => {
     return (
-        <div className='mb-96 h-screen'>
+        <div className='mb-36 h-screen'>
             <div className='bg-#F0F0F0 px-0 lg:px-24 grid mb-72 h-screen'>
                 <div className=' bg-white grid grid-cols-1 lg:grid-cols-4 mt-24'>
                     <div className=''>
