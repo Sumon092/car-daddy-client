@@ -7,14 +7,14 @@ const Banner = () => {
 
     return (
         <>
-            <div class="bg-warning w-full h-12 flex justify-center items-center px-16">
+            <div class="bg-warning w-full h-12 flex justify-center items-center px-0 lg:px-16">
                 <div className='text-center '>
-                    <input type="text" placeholder="Search by brand, categories, title" class=" border p-1  lg:w-96 mx-w-xs mx-auto" /><button className='btn rounded-none btn-primary btn-sm'>search</button>
+                    <input type="text" placeholder="Search by brand, categories, title" class=" border p-1 lg:w-96 mx-w-xs mx-auto" /><button className='btn rounded-none btn-primary btn-sm'>search</button>
                 </div>
             </div>
-            <div className='flex justify-items-start items-center h-screen px-24 bg-base-100 bg-white;'>
+            <div className='flex grid-cols-1 justify-items-start items-center h-screen px-0 lg:px-24 bg-base-100 bg-white;'>
                 <div className='mx-auto lg:mt-[-195px]'>
-                    <ul class="menu  bg-base-100 w-96 mt-5 lg:w-72 lg:mt-24 rounded-none border-solid border-2 border-yellow-300 h-screen">
+                    <ul class="menu w-full px-0  bg-base-100  mt-5 lg:w-72 lg:mt-24 rounded-none border-solid border-2 border-yellow-300 h-screen">
                         <li class="bg-primary uppercase text-white "><a>Shop Departments</a></li>
                         <hr />
                         <li class="border-black-200"><a>Car & Motor Bike Care</a></li>

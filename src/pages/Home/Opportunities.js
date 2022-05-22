@@ -7,8 +7,8 @@ import Icon4 from '../../assets/icon/gift-1.png'
 const Opportunities = () => {
 
     return (
-        <div className="px-24 bg-#f0f0f0 h-32 my-8">
-            <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-5 h-screen lg:h-28 bg-white px-16'>
+        <div className="px-0 lg:px-24 bg-#f0f0f0 h-screen lg:h-12 mt-8">
+            <div className='grid grid-cols-1 lg:grid-cols-4 gap-5 h-screen lg:h-28 bg-white px-16'>
                 <div className='flex justify-start items-center'>
                     <img className='mx-5' style={{ width: '57px' }} src={Icon1} alt="" />
                     <div >

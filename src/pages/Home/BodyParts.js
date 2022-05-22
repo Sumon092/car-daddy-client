@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import BannerImage from '../../assets/banner/Chromium_Banner3.jpg'
 import BodyPart1 from '../../assets/bodyparts/speakers-300x300.jpg'
 import BodyPart2 from '../../assets/bodyparts/prod7_deposit_opt-350x350.jpg'
@@ -8,10 +7,10 @@ import BodyPart3 from '../../assets/bodyparts/prod1_deposit_opt-350x350.jpg'
 
 const BodyParts = () => {
     return (
-        <div className='mb-96'>
-            <div className='bg-#F0F0F0 px-24 grid mb-72'>
-                <div className='h-64 bg-white grid grid-cols-1 lg:grid-cols-4'>
-                    <div className='h-60'>
+        <div className='mb-96 h-screen'>
+            <div className='bg-#F0F0F0 px-0 lg:px-24 grid mb-72 h-screen'>
+                <div className=' bg-white grid grid-cols-1 lg:grid-cols-4 mt-24'>
+                    <div className=''>
                         <div className=" card bg-base-100 h-screen rounded-none image-full">
                             <figure><img className='rounded-none' src={BannerImage} alt="Car" /></figure>
                             <div class="card-body">
@@ -26,17 +25,17 @@ const BodyParts = () => {
                     </div>
 
                     <div className='bg-white h-screen col-span-3'>
-                        <div className='h-10 w-full border-y-2 border px-10'>
+                        <div className='h-10 w-full border-y-2 border px-0 lg:px-10'>
                             <button class="btn btn-link">ALL</button>
                             <button class="btn btn-link">BUMPERS</button>
                             <button class="btn btn-link">DOORS</button>
                         </div>
-                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 lg:mt-24 px-10'>
+                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 lg:mt-16 lg:px-10'>
                             <div class="card bg-base-100 h-auto my-auto rounded-none hover:shadow-xl">
                                 <figure><img src={BodyPart1} alt="Shoes" /></figure>
                                 <div class="card-body">
                                     <h2 class="card-title text-neutral">
-                                        APPLIFIERS
+                                        AMPLIFIERS
                                     </h2>
                                     <p className=''>Combo Sport Stereos for coupe Models</p>
                                     <div class="rating rating-sm">
