@@ -18,7 +18,7 @@ module.exports = {
 
           "base-100": "#FFFFFF",
 
-          "background-100": "#F0F0F0",
+          "background": "#F0F0F0",
 
           "info": "#3ABFF8",
 
