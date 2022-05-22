@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../Shared/Header';
 import Banner from './Banner';
 import BodyParts from './BodyParts';
 import Opportunities from './Opportunities';
+import PopularCat from './PopularCat';
 
 const Home = () => {
     return (
@@ -10,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <Opportunities></Opportunities>
             <BodyParts></BodyParts>
+            <PopularCat></PopularCat>
         </div>
     );
 };
