@@ -1,0 +1,26 @@
+[
+    {
+        "name": "AMPLIFIERS",
+        "desc": "Combo Sport Stereos for coupe Models",
+        "img": "",
+        "price": "25",
+        "minOrder": "100",
+        "aQuantity": "5000"
+    },
+    {
+        "name": "BODY PARTS",
+        "desc": " Sport body part of chevrolet 2015-2017",
+        "img": "",
+        "price": "75",
+        "minOrder": "10",
+        "aQuantity": "1000"
+    },
+    {
+        "name": "BREAK PARTS",
+        "desc": "Breaking block (maintenance kit for SUV)",
+        "img": "",
+        "price": "99",
+        "minOrder": "50",
+        "aQuantity": "5000"
+    }
+]

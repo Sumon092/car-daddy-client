@@ -25,12 +25,12 @@ const BodyParts = () => {
                     </div>
 
                     <div className='bg-white h-screen col-span-3'>
-                        <div className='h-10 w-full border-y-2 border px-0 lg:px-10'>
+                        <div className='h-10 w-full border px-0 lg:px-10'>
                             <button class="btn btn-link">ALL</button>
                             <button class="btn btn-link">BUMPERS</button>
                             <button class="btn btn-link">DOORS</button>
                         </div>
-                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 lg:mt-16 lg:px-10'>
+                        <div className='grid grid-cols-1 lg:grid-cols-3 gap-3  lg:px-10'>
                             <div class="card bg-base-100 h-auto my-auto rounded-none hover:shadow-xl">
                                 <figure><img src={BodyPart1} alt="Shoes" /></figure>
                                 <div class="card-body">
@@ -55,8 +55,7 @@ const BodyParts = () => {
                                         BODY PARTS
                                     </h2>
                                     <p className=''>
-                                        Sport body part of chevrolet
-                                        <br />2015-2017
+                                        Sport body part of chevrolet 2015-2017
                                     </p>
 
                                     <div class="rating rating-sm">
