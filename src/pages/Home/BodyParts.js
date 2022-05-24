@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import BannerImage from '../../assets/banner/Chromium_Banner3.jpg'
-import BodyPart1 from '../../assets/bodyparts/speakers-300x300.jpg'
-import BodyPart2 from '../../assets/bodyparts/prod7_deposit_opt-350x350.jpg'
-import BodyPart3 from '../../assets/bodyparts/prod1_deposit_opt-350x350.jpg'
+import Parts from './Parts';
 
 
 const BodyParts = () => {
+    const [allParts, setAllParts] = useState([])
+
+    useEffect(() => {
+        const url = 'http://localhost:5000/parts'
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(res => res.json()).then(data => {
+            setAllParts(data);
+        })
+    }, [])
     return (
         <div className='mb-36 h-screen'>
             <div className='bg-#F0F0F0 px-0 lg:px-24 grid mb-72 h-screen'>
@@ -31,7 +42,8 @@ const BodyParts = () => {
                             <button class="btn btn-link">DOORS</button>
                         </div>
                         <div className='grid grid-cols-1 lg:grid-cols-3 gap-3  lg:px-10'>
-                            <div class="card bg-base-100 h-auto my-auto rounded-none hover:shadow-xl">
+                            {allParts.map(parts => <Parts key={parts._id} parts={parts}></Parts>)}
+                            {/* <div class="card bg-base-100 h-auto my-auto rounded-none hover:shadow-xl">
                                 <figure><img src={BodyPart1} alt="Shoes" /></figure>
                                 <div class="card-body">
                                     <h2 class="card-title text-neutral">
@@ -86,7 +98,7 @@ const BodyParts = () => {
                                     </div>
                                     <p className='text-xl font-bold text-warning'>$ 430 - $ 945</p>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

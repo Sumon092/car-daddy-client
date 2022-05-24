@@ -8,7 +8,7 @@ import PopularImage5 from '../../assets/popular/wheel-set.png'
 
 const PopularCat = () => {
     return (
-        <div className='lg:px-24 mb-32'>
+        <div className='lg:px-24 mb-16'>
             <h2 className='text:xl lg:text-3xl font-bold lg:font-extrabold uppercase my-16 text-black'>Popular <span className='font-semibold'>categories</span></h2>
             <div>
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
