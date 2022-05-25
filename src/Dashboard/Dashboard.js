@@ -6,7 +6,7 @@ import { Link, Outlet } from 'react-router-dom';
 import auth from '../firebase.init';
 
 const Dashboard = () => {
-    const [user] = useAuthState(auth)
+    // const [user] = useAuthState(auth)
     // const [admin] = useAdmin(user);
     // console.log(admin);
     return (
