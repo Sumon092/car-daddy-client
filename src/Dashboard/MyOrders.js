@@ -16,7 +16,7 @@ const MyOrders = () => {
     }, [user])
     return (
         <div>
-            <h2>This is my orders {order.length}</h2>
+            <h2 className='text-2xl text-center font-bold text-primary my-5'>I have ordered {order.length} parts</h2>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
                     <thead>
@@ -35,6 +35,7 @@ const MyOrders = () => {
                             <td>{a.PartsDesc}</td>
                             <td>{a.quantity}</td>
                             <td>$ {a.price}</td>
+                            <button className='ml-5 btn btn-md btn-error text-white mr-5'>Cancel</button><button className='text-white btn btn-md btn-success'>Pay</button>
                         </tr>)}
 
                     </tbody>

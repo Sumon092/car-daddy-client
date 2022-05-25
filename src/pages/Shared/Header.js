@@ -14,13 +14,14 @@ const Header = () => {
         <li><Link className='font-extrabold text-xl font-serif ' to='/parts'>Parts</Link ></li>
         <li><Link className='font-extrabold text-xl font-serif' to='/business'>Business Summery</Link ></li>
         <li><Link className='font-extrabold text-xl font-serif' to='/reviews'>Reviews</Link ></li>
-        <li><Link className='font-extrabold text-xl font-serif' to='/dashboard'>Dashboard</Link ></li>
+        {user && <li><Link className='font-extrabold text-xl font-serif' to='/dashboard'>Dashboard</Link ></li>}
     </>
 
 
     return (
         <div className='bg-base-100'>
             <div className="nav-top bg-primary max-w-full h-12">
+                {user && <p className='text-white text-right mr-12 text-lg'><small className='text-white mt-2'>Welcome &#128525; {user.displayName}&#128151;</small></p>}
             </div>
             <div className="navbar bg-base-100 px-24">
                 <div className="navbar-start">
@@ -41,7 +42,11 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {user ? <Link onClick={logout} to='/login' className="btn btn-primary font-serif">Sign Out</Link> : <Link to='/login' className="btn btn-primary font-serif">Login</Link>}
+                    {user ?
+                        <Link onClick={logout} to='/login' className="btn btn-primary font-serif">Sign Out</Link>
+                        :
+                        <Link to='/login' className="btn btn-primary font-serif">Login</Link>
+                    }
                 </div>
             </div>
         </div>
