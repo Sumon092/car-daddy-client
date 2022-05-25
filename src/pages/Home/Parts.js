@@ -1,7 +1,11 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
-const Parts = ({ parts }) => {
+const Parts = ({ parts, setParts }) => {
     const { name, desc, img, price, minOrder, aQuantity } = parts;
+    const [user] = useAuthState(auth)
     return (
         <>
             <div class="card bg-base-100 h-auto my-auto rounded-none hover:shadow-xl">
@@ -22,8 +26,14 @@ const Parts = ({ parts }) => {
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
                     </div>
-                    <button className='btn btn-info btn-sm w-36 mt-5 uppercase text-white'>Order now</button>
+                    {user ? <label
+                        onClick={() => setParts(parts)}
+                        for="purchase-modal"
+                        class="btn modal-button btn-info btn-sm text-white uppercase"
+                    >order now</label> : <Link to='/login'><button className='btn btn-info btn-sm text-white uppercase'>order now</button></Link>
+                    }
                 </div>
+
             </div>
         </>
     );

@@ -1,14 +1,22 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, NavLink } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+    }
     const navItems = <>
         <li><Link className='font-extrabold text-xl font-serif ' to='/parts'>Parts</Link ></li>
         <li><Link className='font-extrabold text-xl font-serif' to='/business'>Business Summery</Link ></li>
         <li><Link className='font-extrabold text-xl font-serif' to='/reviews'>Reviews</Link ></li>
         <li><Link className='font-extrabold text-xl font-serif' to='/dashboard'>Dashboard</Link ></li>
     </>
+
 
     return (
         <div className='bg-base-100'>
@@ -25,7 +33,7 @@ const Header = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl font-bold lg:text-3xl font-extrabold font-serif">Car Daddy</a>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl font-bold lg:text-3xl font-extrabold font-serif">Car Daddy</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
@@ -33,7 +41,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn btn-primary font-serif">Login</a>
+                    {user ? <Link onClick={logout} to='/login' className="btn btn-primary font-serif">Sign Out</Link> : <Link to='/login' className="btn btn-primary font-serif">Login</Link>}
                 </div>
             </div>
         </div>

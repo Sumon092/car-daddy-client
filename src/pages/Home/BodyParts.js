@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import BannerImage from '../../assets/banner/Chromium_Banner3.jpg'
+import auth from '../../firebase.init';
+import Purchase from '../../Transactions/Purchase';
+import Loading from '../Shared/Loading';
 import Parts from './Parts';
 
 
 const BodyParts = () => {
+    const [user, loading, error] = useAuthState(auth);
     const [allParts, setAllParts] = useState([])
+    const [parts, setParts] = useState(null);
 
     useEffect(() => {
         const url = 'http://localhost:5000/parts'
@@ -17,6 +23,9 @@ const BodyParts = () => {
             setAllParts(data);
         })
     }, [])
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <div className='mb-36 h-screen'>
             <div className='bg-#F0F0F0 px-0 lg:px-24 grid mb-72 h-screen'>
@@ -42,67 +51,17 @@ const BodyParts = () => {
                             <button class="btn btn-link">DOORS</button>
                         </div>
                         <div className='grid grid-cols-1 lg:grid-cols-3 gap-3  lg:px-10'>
-                            {allParts.map(parts => <Parts key={parts._id} parts={parts}></Parts>)}
-                            {/* <div class="card bg-base-100 h-auto my-auto rounded-none hover:shadow-xl">
-                                <figure><img src={BodyPart1} alt="Shoes" /></figure>
-                                <div class="card-body">
-                                    <h2 class="card-title text-neutral">
-                                        AMPLIFIERS
-                                    </h2>
-                                    <p className=''>Combo Sport Stereos for coupe Models</p>
-                                    <div class="rating rating-sm">
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                    </div>
-                                    <p className='text-xl font-bold text-warning'>$ 30 - $ 45</p>
-                                </div>
-                            </div>
-                            <div class="card bg-base-100 rounded-none hover:shadow-xl">
-                                <figure><img src={BodyPart2} alt="Shoes" /></figure>
-                                <div class="card-body">
-                                    <h2 class="card-title text-neutral">
-                                        BODY PARTS
-                                    </h2>
-                                    <p className=''>
-                                        Sport body part of chevrolet 2015-2017
-                                    </p>
+                            {allParts.map(parts => <Parts
+                                key={parts._id}
+                                parts={parts}
+                                setParts={setParts}
+                            ></Parts>)}
 
-                                    <div class="rating rating-sm">
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                    </div>
-                                    <p className='text-xl font-bold text-warning'>$ 130 - $ 345</p>
-                                </div>
-                            </div>
-                            <div class="card bg-base-100 rounded-none hover:shadow-xl">
-                                <figure><img src={BodyPart3} alt="Shoes" /></figure>
-                                <div class="card-body">
-                                    <h2 class="card-title text-neutral">
-                                        BREAK PARTS
-                                        <div class="badge badge-secondary">NEW</div>
-                                    </h2>
-                                    <p>Breaking block (maintenance kit for SUV)</p>
-
-                                    <div class="rating rating-sm">
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                                    </div>
-                                    <p className='text-xl font-bold text-warning'>$ 430 - $ 945</p>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                 </div>
             </div>
+            {parts && <Purchase parts={parts} setParts={setParts}></Purchase>}
         </div>
     );
 };
