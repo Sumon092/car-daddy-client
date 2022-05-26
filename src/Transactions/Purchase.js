@@ -41,11 +41,11 @@ const Purchase = ({ parts, setParts }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    alert('purchase successful');
-                    // toast(`you have ordered`)
+                    // alert('purchase successful');
+                    toast.success(`you have ordered ${name} for $${price}`)
                 }
                 else {
-                    // toast('order cancel')
+                    toast.error('order cancel')
                     alert('order cancel')
                 }
                 setParts(null)
