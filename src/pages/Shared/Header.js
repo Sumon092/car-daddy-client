@@ -9,6 +9,7 @@ const Header = () => {
     const [user, loading, error] = useAuthState(auth);
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     }
     const navItems = <>
         <li><Link className='font-extrabold text-xl font-serif ' to='/parts'>Parts</Link ></li>
