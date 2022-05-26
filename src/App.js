@@ -18,6 +18,7 @@ import AllUsers from './Dashboard/AllUsers';
 import ManageOrders from './Dashboard/ManageOrders';
 import AddProduct from './Dashboard/AddProduct';
 import ManageProduct from './Dashboard/ManageProduct';
+import NotFound from './NotFound/NotFound';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
           <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='manageProduct' element={<ManageProduct></ManageProduct>}></Route>
         </Route>
-
+        <Route path='*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
       <ToastContainer></ToastContainer>
