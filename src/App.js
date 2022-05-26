@@ -15,6 +15,9 @@ import RequiredAuth from './Login/RequireAuth';
 import Purchase from './Transactions/Purchase';
 import { ToastContainer } from 'react-toastify';
 import AllUsers from './Dashboard/AllUsers';
+import ManageOrders from './Dashboard/ManageOrders';
+import AddProduct from './Dashboard/AddProduct';
+import ManageProduct from './Dashboard/ManageProduct';
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
           <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
           <Route path='users' element={<AllUsers></AllUsers>}></Route>
+          <Route path='manageOrder' element={<ManageOrders></ManageOrders>}></Route>
+          <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='manageProduct' element={<ManageProduct></ManageProduct>}></Route>
         </Route>
 
 

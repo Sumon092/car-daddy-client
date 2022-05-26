@@ -4,7 +4,7 @@ import Loading from '../pages/Shared/Loading';
 import MakeAdmin from './MakeAdmin';
 
 const AllUsers = () => {
-    const { data: users, isLoading } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <MakeAdmin key={user._id} user={user} index={index}></MakeAdmin>
+                            users.map((user, index) => <MakeAdmin key={user._id} user={user} index={index} refetch={refetch}></MakeAdmin>
 
                             )
                         }
