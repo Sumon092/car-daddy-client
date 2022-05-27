@@ -26,13 +26,7 @@ const Parts = ({ parts, setParts }) => {
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
                     </div>
-                    {/* {user ? <label
-                        onClick={() => setParts(parts)}
-                        for="purchase-modal"
-                        class="btn modal-button btn-info btn-sm text-white uppercase"
-                    >order now</label> : <Link to='/login'><button className='btn btn-info btn-sm text-white uppercase'>order now</button></Link>
-                    } */}
-                    <Link to={`/purchase/${parts._id}`}>Order Now </Link>
+                    <button className='btn btn-info btn-sm text-white'><Link to={`/purchase/${parts._id}`}>Order Now </Link></button>
 
                 </div>
 

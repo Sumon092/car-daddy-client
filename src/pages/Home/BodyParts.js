@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import BannerImage from '../../assets/banner/Chromium_Banner3.jpg'
 import auth from '../../firebase.init';
-import Purchase from '../../Transactions/Purchase';
-import PurchaseNow from '../../Transactions/PurchaseNow';
 import Loading from '../Shared/Loading';
 import Parts from './Parts';
 
@@ -62,8 +60,6 @@ const BodyParts = () => {
                     </div>
                 </div>
             </div>
-            {/* {parts && <Purchase parts={parts} setParts={setParts}></Purchase>} */}
-            {/* {parts.map(product => <PurchaseNow key={product.id} product={product}></PurchaseNow>)} */}
         </div>
     );
 };

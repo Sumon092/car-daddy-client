@@ -165,7 +165,10 @@ const PurchaseNow = () => {
                             {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>}
                         </label>
                     </div>
-                    <input type="submit" value="Confirm order" className="btn btn-info text-white w-full max-w-xs" />
+
+                    {
+                        <input type="submit" value="Confirm order" className="btn btn-info text-white w-full max-w-xs" />
+                    }
                 </form>
             </div>
         </>
