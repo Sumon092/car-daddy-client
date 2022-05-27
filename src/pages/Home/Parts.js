@@ -4,7 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const Parts = ({ parts, setParts }) => {
-    const { name, desc, img, price, minOrder, aQuantity } = parts;
+    const { name, desc, img, price, minOrder, aQuantity, _id } = parts;
     const [user] = useAuthState(auth)
     return (
         <>
@@ -26,12 +26,14 @@ const Parts = ({ parts, setParts }) => {
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
                     </div>
-                    {user ? <label
+                    {/* {user ? <label
                         onClick={() => setParts(parts)}
                         for="purchase-modal"
                         class="btn modal-button btn-info btn-sm text-white uppercase"
                     >order now</label> : <Link to='/login'><button className='btn btn-info btn-sm text-white uppercase'>order now</button></Link>
-                    }
+                    } */}
+                    <Link to={`/purchase/${parts._id}`}>Order Now </Link>
+
                 </div>
 
             </div>

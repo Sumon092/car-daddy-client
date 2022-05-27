@@ -19,6 +19,7 @@ import ManageOrders from './Dashboard/ManageOrders';
 import AddProduct from './Dashboard/AddProduct';
 import ManageProduct from './Dashboard/ManageProduct';
 import NotFound from './NotFound/NotFound';
+import PurchaseNow from './Transactions/PurchaseNow';
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
         <Route path='/home' element={<Home />}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signUp' element={<SignUp></SignUp>}></Route>
-        <Route path='/purchase/:id' element={<RequiredAuth><Purchase></Purchase></RequiredAuth>}></Route>
+        <Route path='/' element={<RequiredAuth><Purchase></Purchase></RequiredAuth>}></Route>
+        <Route path='/purchase/:id' element={<RequiredAuth><PurchaseNow></PurchaseNow></RequiredAuth>}></Route>
         <Route path='dashboard' element={<RequiredAuth><Dashboard></Dashboard></RequiredAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
