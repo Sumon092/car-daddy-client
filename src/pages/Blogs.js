@@ -4,7 +4,7 @@ const Blogs = () => {
     return (
         <div className='px-10 lg:px-24 bg-white leading-6 shadow-sm py-10'>
             <div>
-                <h3 className='text-neutral text-2xl'>Q:1 How will you improve the performance of a React Application</h3>
+                <h3 className='text-neutral text-2xl'>Q:1 How will  improve the performance of a React Application</h3>
                 <p><span className='text-xl'>Ans</span>: We can improve the performance of React application in several ways,Some of them given below:
                 </p>
                 <ul className='leading-10'>

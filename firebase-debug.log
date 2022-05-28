@@ -1,0 +1,26 @@
+[debug] [2022-05-28T15:28:38.172Z] ----------------------------------------------------------------------
+[debug] [2022-05-28T15:28:38.175Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\IT\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-05-28T15:28:38.176Z] CLI Version:   10.6.0
+[debug] [2022-05-28T15:28:38.176Z] Platform:      win32
+[debug] [2022-05-28T15:28:38.176Z] Node Version:  v16.13.1
+[debug] [2022-05-28T15:28:38.177Z] Time:          Sat May 28 2022 21:28:38 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-05-28T15:28:38.178Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-28T15:28:38.296Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-28T15:28:38.297Z] > authorizing via signed-in user (emsl.sumon@gmail.com)
+[debug] [2022-05-28T15:28:38.297Z] [iam] checking project car-daddy for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-28T15:28:38.302Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-daddy:testIamPermissions [none]
+[debug] [2022-05-28T15:28:38.303Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-daddy:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-28T15:28:40.031Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-daddy:testIamPermissions 401
+[debug] [2022-05-28T15:28:40.031Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/car-daddy:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2022-05-28T15:28:40.033Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-05-28T15:28:40.035Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/car-daddy [none]
+[debug] [2022-05-28T15:28:40.770Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/car-daddy 401
+[debug] [2022-05-28T15:28:40.770Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/car-daddy {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2022-05-28T15:28:40.770Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-05-28T15:28:41.155Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at module.exports (C:\Users\IT\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:47:12)
+    at RetryOperation._fn (C:\Users\IT\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project car-daddy. Please make sure the project exists and your account has permission to access it.
