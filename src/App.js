@@ -22,6 +22,7 @@ import NotFound from './NotFound/NotFound';
 import PurchaseNow from './Transactions/PurchaseNow';
 import RequireAdmin from './Login/RequireAdmin';
 import Blogs from './pages/Blogs';
+import MyPortfolio from './pages/MyPortfolio';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signUp' element={<SignUp></SignUp>}></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/' element={<RequiredAuth><Purchase></Purchase></RequiredAuth>}></Route>
         <Route path='/purchase/:id' element={<RequiredAuth><PurchaseNow></PurchaseNow></RequiredAuth>}></Route>
         <Route path='dashboard' element={<RequiredAuth><Dashboard></Dashboard></RequiredAuth>}>

@@ -26,20 +26,20 @@ const ManageOrders = () => {
                                 <th></th>
                                 <th>Client Email</th>
                                 <th>Parts Name</th>
-                                <th>Description</th>
-                                <th>Quantity</th>
+                                <th>Ordered Quantity</th>
                                 <th>Price</th>
-                                <th>Price</th>
-                                <th>Price</th>
+                                <th>Total Payable</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             {orders.map((a, index) => <tr>
                                 <th>{index + 1}</th>
                                 <td>{a.clientName}</td>
-                                <td>{a.PartsDesc}</td>
-                                <td>{a.quantity}</td>
-                                <td>$ {a.price}</td>
+                                <td>{a.partsName}</td>
+                                <td>{a.minOrder}</td>
+                                <td>{a.price}</td>
+                                <td>${a.totalPrice}</td>
                                 <button className='ml-5 btn btn-sm btn-error text-white mr-5'>Cancel</button>
                             </tr>)}
 

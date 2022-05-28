@@ -16,6 +16,7 @@ const Header = () => {
         <li><Link className='font-extrabold text-xl font-serif' to='/business'>Business Summery</Link ></li>
         <li><Link className='font-extrabold text-xl font-serif' to='/reviews'>Reviews</Link ></li>
         <li><Link className='font-extrabold text-xl font-serif' to='/blogs'>Blogs</Link ></li>
+        <li><Link className='font-extrabold text-xl font-serif' to='/portfolio'>My Portfolio</Link ></li>
         {user && <li><Link className='font-extrabold text-xl font-serif' to='/dashboard'>Dashboard</Link ></li>}
     </>
 
