@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../pages/Shared/Loading';
+import DeleteModal from './DeleteModal';
 import Product from './Product';
 
 const ManageProduct = () => {
+    const [deleteProduct, setDeleteProduct] = useState(null)
     const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/products', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,9 +24,21 @@ const ManageProduct = () => {
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
 
                 {
-                    products.map(item => <Product key={item._id} item={item}></Product>)
+                    products.map(item => <Product
+                        key={item._id}
+                        item={item}
+                        setDeleteProduct={setDeleteProduct}
+
+                    ></Product>)
                 }
             </div>
+            {
+                deleteProduct && <DeleteModal
+                    deleteProduct={deleteProduct}
+                    setDeleteProduct={setDeleteProduct}
+                    refetch={refetch}
+                ></DeleteModal>
+            }
         </div>
     );
 };
