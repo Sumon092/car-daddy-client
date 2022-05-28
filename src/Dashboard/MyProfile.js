@@ -41,109 +41,107 @@ const MyProfile = () => {
 
     }
     return (
-        <div className='flex justify-center items-center'>
-            {/* <h2>This is my profile</h2> */}
-            <div className='flex justify-center items-center'>
-                <form onSubmit={handleSubmit(onSubmit)} className='leading-3 my-5 border-2 border-solid p-10 bg-slate-300'>
-                    <h2 className='text 3xl font-bold text-center py-5 uppercase text-primary'>Add  Profile</h2>
-                    <div className="form-control">
+        <div className='flex justify-center items-center bg-cyan-400 leading-3'>
 
-                        <input
-                            type="email"
-                            placeholder="Profile Name"
-                            className="input input-bordered w-full max-w-xs"
-                            {...register("email", {
-                                required: {
-                                    value: true,
-                                    message: 'Name is Required'
-                                }
-                            })}
-                            value={user.email}
-                        />
-                        <label className="label">
-                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                        </label>
-                    </div>
+            <form onSubmit={handleSubmit(onSubmit)} className='leading-3 my-5 border-2 border-solid p-10 bg-slate-300'>
+                <h2 className='text 3xl font-bold text-center py-5 uppercase text-primary'>Add a product</h2>
+                <div className="form-control  w-full max-w-lg border-2 border-solid">
 
-                    <div className="form-control  w-full max-w-lg border-2 border-solid">
+                    <input
+                        type="email"
+                        placeholder="Profile Name"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("email", {
+                            required: {
+                                value: true,
+                                message: 'Name is Required'
+                            }
+                        })}
+                        value={user.email}
+                    />
+                    <label className="label">
+                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                    </label>
+                </div>
 
-                        <input
-                            type="text"
-                            placeholder="Profile Price"
-                            className="input input-bordered w-full max-w-xs"
-                            {...register("name", {
-                                required: {
-                                    value: true,
-                                    message: 'Price Required'
-                                }
-                            })}
-                            value={user.displayName}
-                        />
+                <div className="form-control  w-full max-w-lg border-2 border-solid">
 
-                    </div>
-                    <div className="form-control  w-full max-w-lg border-2 border-solid">
+                    <input
+                        type="text"
+                        placeholder="Profile Price"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("name", {
+                            required: {
+                                value: true,
+                                message: 'Price Required'
+                            }
+                        })}
+                        value={user.displayName}
+                    />
 
-                        <input
-                            type="text"
-                            placeholder="Your Education"
-                            className="input input-bordered w-full max-w-xs"
-                            {...register("education", {
-                                required: {
-                                    value: true,
-                                    message: 'Description Required'
-                                }
-                            })}
-                        />
+                </div>
+                <div className="form-control  w-full max-w-lg border-2 border-solid">
 
-                    </div>
-                    <div className="form-control  w-full max-w-lg border-2 border-solid">
+                    <input
+                        type="text"
+                        placeholder="Your Education"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("education", {
+                            required: {
+                                value: true,
+                                message: 'Description Required'
+                            }
+                        })}
+                    />
 
-                        <input
-                            type="text"
-                            placeholder="Your Location"
-                            className="input input-bordered w-full max-w-xs"
-                            {...register("location", {
-                                required: {
-                                    value: true,
-                                    message: 'Stock Quantity Required'
-                                }
-                            })}
-                        />
+                </div>
+                <div className="form-control  w-full max-w-lg border-2 border-solid">
 
-                    </div>
-                    <div className="form-control  w-full max-w-lg border-2 border-solid">
+                    <input
+                        type="text"
+                        placeholder="Your Location"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("location", {
+                            required: {
+                                value: true,
+                                message: 'Stock Quantity Required'
+                            }
+                        })}
+                    />
 
-                        <input
-                            type="text"
-                            placeholder="Your LinkedIn profile"
-                            className="input input-bordered w-full max-w-xs"
-                            {...register("linkedIn", {
-                                required: {
-                                    value: true,
-                                    message: 'Minimum Order Quantity Required'
-                                }
-                            })}
-                        />
+                </div>
+                <div className="form-control  w-full max-w-lg border-2 border-solid">
 
-                    </div>
-                    <div className="form-control w-full max-w-xs">
-                        <input
-                            type="phone"
-                            placeholder="Your Phone No."
-                            className="input input-bordered w-full max-w-xs"
-                            {...register("phone", {
-                                required: {
-                                    value: true,
-                                    message: 'Image Required'
-                                }
-                            })}
-                        />
-                    </div>
+                    <input
+                        type="text"
+                        placeholder="Your LinkedIn profile"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("linkedIn", {
+                            required: {
+                                value: true,
+                                message: 'Minimum Order Quantity Required'
+                            }
+                        })}
+                    />
+
+                </div>
+                <div className="form-control w-full max-w-xs">
+                    <input
+                        type="phone"
+                        placeholder="Your Phone No."
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("phone", {
+                            required: {
+                                value: true,
+                                message: 'Image Required'
+                            }
+                        })}
+                    />
+                </div>
 
 
-                    <input className='btn w-full max-w-xs text-white mt-5' type="submit" value="Add Profile" />
-                </form>
-            </div>
+                <input className='btn w-full max-w-xs text-white mt-5' type="submit" value="Add Profile" />
+            </form>
         </div>
     );
 };

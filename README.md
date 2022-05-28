@@ -11,7 +11,7 @@ project live link [Create React App](https://car-daddy.web.app/).
     <li>Separate admin and user dashboard</li>
 </ul>
 
-<h3>Technology used<h3>
+<h3>Technology used</h3>
 
 <ul>
     <li>React.js</li>
