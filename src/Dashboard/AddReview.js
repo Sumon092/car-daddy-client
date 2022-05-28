@@ -24,7 +24,7 @@ const AddReview = () => {
             reviewText: data.reviewText
         }
 
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://cryptic-shelf-32962.herokuapp.com/reviews`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
