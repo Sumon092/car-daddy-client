@@ -12,7 +12,7 @@ const BodyParts = () => {
     const [parts, setParts] = useState(null);
 
     useEffect(() => {
-        const url = 'http://localhost:5000/parts'
+        const url = 'http://localhost:5000/part'
         fetch(url, {
             method: 'GET',
             headers: {

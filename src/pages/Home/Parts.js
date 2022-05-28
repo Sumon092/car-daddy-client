@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
+import { Link } from 'react-router-dom';
+
+
 
 const Parts = ({ parts, setParts }) => {
     const { name, desc, img, price, minOrder, aQuantity, _id } = parts;
-    const [user] = useAuthState(auth)
+
     return (
         <>
             <div class="card bg-base-100 h-auto my-auto rounded-none hover:shadow-xl">

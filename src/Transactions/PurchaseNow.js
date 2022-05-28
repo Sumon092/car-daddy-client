@@ -10,15 +10,13 @@ import Loading from '../pages/Shared/Loading';
 const PurchaseNow = () => {
     const { id } = useParams();
     const [products, setParts] = useState([]);
-    // console.log(parts);
-    // console.log(id);
-    const { img, price, name, minOrder, aQuantity, desc, _id } = products;
-    const [user, loading] = useAuthState(auth);
+    // const { minOrder } = parts;
+    const [user] = useAuthState(auth);
     // let items = [];
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('http://localhost:5000/parts', {
+    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('http://localhost:5000/part', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,22 +32,20 @@ const PurchaseNow = () => {
 
     // console.log("parst ", item)
     const handlePurchase = (event) => {
-        event.preventDefault();
-        const minOrder = event.target.minOrder.value;
-
-
+        // event.preventDefault();
         const order = {
             partsId: it._id,
             partsName: it.name,
             PartsDesc: it.desc,
             price: it.price,
             quantity: it.Quantity,
-            totalPrice: event.target.minOrder.value * it.price,
-            minOrder: event.target.minOrder.value,
+
+            totalPrice: event.minOrder * it.price,
+            minOrder: event.minOrder,
             clientName: user.displayName,
             email: user.email,
-            address: event.target.address.value,
-            phone: event.target.phone.value
+            address: event.address,
+            phone: event.phone
         }
         console.log(order);
         fetch('http://localhost:5000/order', {
@@ -107,7 +103,7 @@ const PurchaseNow = () => {
                         </label>
                         <input
                             type="number"
-                            defaultValue={minOrder}
+                            defaultValue={it.minOrder}
                             // placeholder="Your Email"
                             className="input input-bordered w-full max-w-xs"
                             {...register("minOrder", {
@@ -121,7 +117,7 @@ const PurchaseNow = () => {
                                     message: `Your order is less than minimum order`
                                 },
                                 max: {
-                                    value: it.minOrder,
+                                    value: it.aQuantity,
                                     message: 'Quantity not available'
                                 }
                             })}

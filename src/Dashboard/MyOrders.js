@@ -41,6 +41,7 @@ const MyOrders = () => {
                             <th>Description</th>
                             <th>Quantity</th>
                             <th>Price</th>
+                            <th>Total Payable</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,8 +49,9 @@ const MyOrders = () => {
                             <th>{index + 1}</th>
                             <td>{a.partsName}</td>
                             <td>{a.PartsDesc}</td>
-                            <td>{a.quantity}</td>
+                            <td>{a.minOrder}</td>
                             <td>$ {a.price}</td>
+                            <td>$ {a.totalPrice}</td>
                             <button className='ml-5 btn btn-md btn-error text-white mr-5'>Cancel</button><button className='text-white btn btn-md btn-success'>Pay</button>
                         </tr>)}
 
