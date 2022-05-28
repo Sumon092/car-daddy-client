@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import useAdmin from '../hooks/useAdmin';
 
 const DeleteModal = ({ deleteProduct, setDeleteProduct, refetch }) => {
-    const [admin] = useAdmin()
+
     const handleDelete = () => {
         fetch(`http://localhost:5000/products/${deleteProduct.id}`, {
             method: 'DELETE',
@@ -30,7 +30,7 @@ const DeleteModal = ({ deleteProduct, setDeleteProduct, refetch }) => {
                     <h3 class="font-bold text-lg">{deleteProduct.name}</h3>
                     <p class="py-4">If you delete this you will lost this product</p>
                     <div class="modal-action">
-                        {admin && <button onClick={() => handleDelete(deleteProduct._id)} class="btn btn-error btn-sm text-white">Delete Product</button>}
+                        <button onClick={() => handleDelete(deleteProduct._id)} class="btn btn-error btn-sm text-white">Delete Product</button>
                         <label for="my-modal-6" class="btn btn-sm btn-primary">Cancel</label>
                     </div>
                 </div>
