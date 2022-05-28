@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const useParts = (id) => {
     const [parts, setParts] = useState({})
     useEffect(() => {
-        const url = `http://localhost:5000/parts/${id}`
+        const url = `https://car-daddy.web.app/parts/${id}`
         fetch(url, {
             method: 'GET',
             headers: {

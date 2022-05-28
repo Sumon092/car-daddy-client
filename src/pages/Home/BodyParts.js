@@ -12,7 +12,7 @@ const BodyParts = () => {
     const [parts, setParts] = useState(null);
 
     useEffect(() => {
-        const url = 'http://localhost:5000/part'
+        const url = 'https://car-daddy.web.app/part'
         fetch(url, {
             method: 'GET',
             headers: {

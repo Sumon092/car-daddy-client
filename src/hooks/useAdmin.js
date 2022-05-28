@@ -5,7 +5,7 @@ const useAdmin = (user) => {
     const [adminLoading, setAdminLoading] = useState(true);
     const email = user.email;
     useEffect(() => {
-        fetch(`http://localhost:5000/admin/${email}`, {
+        fetch(`https://car-daddy.web.app/admin/${email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

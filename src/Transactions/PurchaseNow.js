@@ -16,7 +16,7 @@ const PurchaseNow = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('http://localhost:5000/part', {
+    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('https://car-daddy.web.app/part', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -48,7 +48,7 @@ const PurchaseNow = () => {
             phone: event.phone
         }
         console.log(order);
-        fetch('http://localhost:5000/order', {
+        fetch('https://car-daddy.web.app/order', {
             method: 'POST',
             headers: {
                 'content-Type': 'application/json'

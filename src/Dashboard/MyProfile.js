@@ -22,7 +22,7 @@ const MyProfile = () => {
             phone: data.phone,
             linkedIn: data.linkedIn
         }
-        fetch(`http://localhost:5000/profile/${email}`, {
+        fetch(`https://car-daddy.web.app/profile/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

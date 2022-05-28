@@ -9,7 +9,7 @@ const HomeProduct = () => {
     const [loading] = useAuthState(auth)
     const [items, setItem] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/products', {
+        fetch('https://car-daddy.web.app/products', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

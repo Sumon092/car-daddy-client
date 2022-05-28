@@ -4,7 +4,7 @@ import Loading from '../pages/Shared/Loading';
 import MakeAdmin from './MakeAdmin';
 
 const AllUsers = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://car-daddy.web.app/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

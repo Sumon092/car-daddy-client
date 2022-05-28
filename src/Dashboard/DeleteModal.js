@@ -5,7 +5,7 @@ import useAdmin from '../hooks/useAdmin';
 const DeleteModal = ({ deleteProduct, setDeleteProduct, refetch }) => {
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/products/${deleteProduct.id}`, {
+        fetch(`https://car-daddy.web.app/products/${deleteProduct.id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

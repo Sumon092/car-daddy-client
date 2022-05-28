@@ -6,7 +6,7 @@ import Loading from '../pages/Shared/Loading';
 
 const ManageOrders = () => {
     const [user] = useAuthState(auth)
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/orders', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://car-daddy.web.app/orders', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

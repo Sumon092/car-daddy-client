@@ -6,7 +6,7 @@ const MakeAdmin = ({ user, index, refetch }) => {
     const { email, role } = user;
     const makeAdmin = () => {
         <Loading></Loading>
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://car-daddy.web.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

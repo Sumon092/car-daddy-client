@@ -31,7 +31,7 @@ const Purchase = ({ parts, setParts }) => {
     //         phone: event.target.phone.value
     //     }
     //     console.log(order);
-    //     fetch('http://localhost:5000/order', {
+    //     fetch('https://car-daddy.web.app/order', {
     //         method: 'POST',
     //         headers: {
     //             'content-Type': 'application/json'
