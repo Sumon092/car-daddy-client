@@ -21,7 +21,7 @@ project live link [Create React App](https://car-daddy.web.app/).
     <li>Firebase for authentication<li>
     <li>Heroku for server deploy<li>
     <li>React query<li>
-<ul>
+</ul>
 ## Available Scripts
 
 In the project directory, you can run:
