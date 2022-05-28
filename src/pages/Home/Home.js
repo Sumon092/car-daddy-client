@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner';
 import BodyParts from './BodyParts';
 import BusinessSummary from './BusinessSummary';
+import HomeProduct from './HomeProduct';
 import Opportunities from './Opportunities';
 import PopularCat from './PopularCat';
 
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <Opportunities></Opportunities>
             <BodyParts></BodyParts>
+            <HomeProduct></HomeProduct>
             <PopularCat></PopularCat>
             <BusinessSummary></BusinessSummary>
         </div>
