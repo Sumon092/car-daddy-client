@@ -16,7 +16,7 @@ const PurchaseNow = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('https://car-daddy.web.app/part', {
+    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('https://cryptic-shelf-32962.herokuapp.com/part', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -48,7 +48,7 @@ const PurchaseNow = () => {
             phone: event.phone
         }
         console.log(order);
-        fetch('https://car-daddy.web.app/order', {
+        fetch('https://cryptic-shelf-32962.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-Type': 'application/json'

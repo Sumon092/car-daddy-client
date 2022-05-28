@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const url = 'https://car-daddy.web.app/parts';
+    const url = 'https://cryptic-shelf-32962.herokuapp.com/parts';
 
     const { data: products, isLoading } = useQuery('products', () => fetch(url).then(res => res.json()));
     const imageStorageKey = 'f3617440862cc8ff199fcf0303527ab8';
@@ -38,7 +38,7 @@ const AddProduct = () => {
                     img: img
                 }
                 console.log(product);
-                fetch('https://car-daddy.web.app/products', {
+                fetch('https://cryptic-shelf-32962.herokuapp.com/products', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

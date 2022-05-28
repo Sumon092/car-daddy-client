@@ -22,7 +22,7 @@ const MyProfile = () => {
             phone: data.phone,
             linkedIn: data.linkedIn
         }
-        fetch(`https://car-daddy.web.app/profile/${email}`, {
+        fetch(`https://cryptic-shelf-32962.herokuapp.com/profile/${email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

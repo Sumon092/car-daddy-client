@@ -10,7 +10,7 @@ const MyOrders = () => {
     const navigate = useNavigate()
     useEffect(() => {
         if (user) {
-            fetch(`https://car-daddy.web.app/order?email=${user.email}`, {
+            fetch(`https://cryptic-shelf-32962.herokuapp.com/order?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

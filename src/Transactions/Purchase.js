@@ -31,7 +31,7 @@ const Purchase = ({ parts, setParts }) => {
     //         phone: event.target.phone.value
     //     }
     //     console.log(order);
-    //     fetch('https://car-daddy.web.app/order', {
+    //     fetch('https://cryptic-shelf-32962.herokuapp.com/order', {
     //         method: 'POST',
     //         headers: {
     //             'content-Type': 'application/json'

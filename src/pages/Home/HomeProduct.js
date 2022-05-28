@@ -9,7 +9,7 @@ const HomeProduct = () => {
     const [loading] = useAuthState(auth)
     const [items, setItem] = useState([])
     useEffect(() => {
-        fetch('https://car-daddy.web.app/products', {
+        fetch('https://cryptic-shelf-32962.herokuapp.com/products', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

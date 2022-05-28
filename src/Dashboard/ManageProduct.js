@@ -6,7 +6,7 @@ import Product from './Product';
 
 const ManageProduct = () => {
     const [deleteProduct, setDeleteProduct] = useState(null)
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://car-daddy.web.app/products', {
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://cryptic-shelf-32962.herokuapp.com/products', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

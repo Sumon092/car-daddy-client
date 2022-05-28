@@ -4,7 +4,7 @@ import Loading from '../pages/Shared/Loading';
 import MakeAdmin from './MakeAdmin';
 
 const AllUsers = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://car-daddy.web.app/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://cryptic-shelf-32962.herokuapp.com/users', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
