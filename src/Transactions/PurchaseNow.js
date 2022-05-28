@@ -14,7 +14,7 @@ const PurchaseNow = () => {
     const [user] = useAuthState(auth);
     // let items = [];
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors, reset }, handleSubmit } = useForm();
 
     const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('https://cryptic-shelf-32962.herokuapp.com/part', {
         method: 'GET',
@@ -59,14 +59,15 @@ const PurchaseNow = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    // alert('purchase successful');
-                    toast.success(`you have ordered ${it.name} for successfully`)
+
+                    toast.success(`you have ordered ${it.name} successfully`)
+                    reset()
                 }
                 else {
                     toast.error('order cancel')
-                    alert('order cancel')
+
                 }
-                // setParts(null)
+
             })
 
     }

@@ -55,8 +55,10 @@ const AddProduct = () => {
                         else {
                             toast.error('Failed to add a product')
                         }
+
                     })
             })
+
     }
     if (isLoading) {
         return <Loading></Loading>

@@ -5,6 +5,7 @@ import BusinessSummary from './BusinessSummary';
 import HomeProduct from './HomeProduct';
 import Opportunities from './Opportunities';
 import PopularCat from './PopularCat';
+import Reviews from './Reviews';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <HomeProduct></HomeProduct>
             <PopularCat></PopularCat>
             <BusinessSummary></BusinessSummary>
+            <Reviews></Reviews>
         </div>
     );
 };

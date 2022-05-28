@@ -8,6 +8,10 @@ const AddReview = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth);
     console.log(user);
+    let ratings;
+    if (ratings > 0) {
+        return ratings
+    }
     // const email = user.email;
     // const [reviews,setReviews]=useState([])
 
@@ -30,90 +34,41 @@ const AddReview = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.acknowledged === true) {
+                if (data.success === true) {
                     toast.success('Review added successfully')
                 }
             })
+        reset()
 
     }
 
     return (
-        <div className='flex justify-center items-center bg-cyan-400 leading-3'>
+        <div className='flex justify-center items-center'>
 
-            <form onSubmit={handleSubmit(handleReviews)} className='leading-3 my-5 border-2 border-solid p-10 bg-slate-300'>
-                <h2 className='text 3xl font-bold text-center py-5 uppercase text-primary'>Add Review</h2>
-                <div className="form-control w-full max-w-xs">
+            <form onSubmit={handleSubmit(handleReviews)} className='text-center leading-3 my-5 border-2 border-solid p-10 bg-slate-300'>
+                <h2 className='text 3xl  text-center py-5 uppercase text-info font-bold'>Add Review</h2>
+                <h2 className='text-2xl font-bold text-black py-5'>Hello {user.displayName}</h2>
+                <p className='text-neutral ml-10'>Please give a review to improve our product quality best</p>
+                <p className='text-neutral mt-3'>{user.email}</p>
+                <div className="form-control  text-xl">
+
+                    <textarea  {...register("ratings", {
+                        required: {
+                            value: true,
+                            message: 'Stock Quantity Required'
+                        },
+                    })} class="textarea textarea-bordered w-full max-w-lg text-center mt-3" placeholder="add a review"></textarea>
+                </div>
+                <div className="form-control text-xl">
                     <input
                         type="text"
-                        placeholder="Your Phone No."
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("avatar", {
-                            required: {
-                                value: true,
-                                message: 'Image Required'
-                            }
-                        })}
-                    />
-                </div>
-                <div className="form-control  w-full max-w-lg border-2 border-solid">
-
-                    <input
-                        type="email"
-                        placeholder="Profile Name"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("email", {
-                            required: {
-                                value: true,
-                                message: 'Name is Required'
-                            }
-                        })}
-                        value={user.email}
-                    />
-
-                </div>
-
-                <div className="form-control  w-full max-w-lg border-2 border-solid">
-
-                    <input
-                        type="text"
-                        placeholder="Profile Price"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("name", {
-                            required: {
-                                value: true,
-                                message: 'Price Required'
-                            }
-                        })}
-                        value={user.displayName}
-                    />
-
-                </div>
-                <div className="form-control  w-full max-w-lg border-2 border-solid">
-
-                    <input
-                        type="text"
-                        placeholder="Your Education"
-                        className="input input-bordered w-full max-w-xs"
+                        placeholder="Please give a review between 1 to 5"
+                        className="input input-bordered mt-5 ml-6 w-full max-w-xs"
                         {...register("reviewText", {
                             required: {
                                 value: true,
                                 message: 'Description Required'
-                            }
-                        })}
-                    />
-
-                </div>
-                <div className="form-control  w-full max-w-lg border-2 border-solid">
-
-                    <input
-                        type="text"
-                        placeholder="Review here"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("ratings", {
-                            required: {
-                                value: true,
-                                message: 'Stock Quantity Required'
-                            }
+                            },
                         })}
                     />
 
@@ -122,7 +77,8 @@ const AddReview = () => {
 
 
 
-                <input className='btn w-full max-w-xs text-white mt-5' type="submit" value="Add Profile" />
+
+                <input className='btn btn-info btn-sm text-white mt-5' type="submit" value="Add Review" />
             </form>
         </div>
     );

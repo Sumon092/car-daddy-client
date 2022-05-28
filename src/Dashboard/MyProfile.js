@@ -44,7 +44,7 @@ const MyProfile = () => {
         <div className='flex justify-center items-center bg-cyan-400 leading-3'>
 
             <form onSubmit={handleSubmit(onSubmit)} className='leading-3 my-5 border-2 border-solid p-10 bg-slate-300'>
-                <h2 className='text 3xl font-bold text-center py-5 uppercase text-primary'>Add a product</h2>
+                <h2 className='text 3xl font-bold text-center py-5 uppercase text-primary'>Welcome {user.displayName}</h2>
                 <div className="form-control  w-full max-w-lg border-2 border-solid">
 
                     <input
