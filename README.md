@@ -14,13 +14,13 @@ project live link [Create React App](https://car-daddy.web.app/).
 <h3>Technology used<h3>
 
 <ul>
-    <li>React.js<li>
-    <li>Express.js<li>
-    <li>MongoDB<li>
-    <li>Tailwind css<li>
-    <li>Firebase for authentication<li>
-    <li>Heroku for server deploy<li>
-    <li>React query<li>
+    <li>React.js</li>
+    <li>Express.js</li>
+    <li>MongoDB</li>
+    <li>Tailwind css</li>
+    <li>Firebase for authentication</li>
+    <li>Heroku for server deploy</li>
+    <li>React query</li>
 </ul>
 ## Available Scripts
 
