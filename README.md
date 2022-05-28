@@ -1,7 +1,27 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+project live link [Create React App](https://car-daddy.web.app/).
+<h3>Project Description</h3>
+<ul>
+    <li>You can able to make any order by this project</li>
+    <li>Calculation profit and loss main tain</li>
+    <li>Product add,edit and update opportunities</li>
+    <li>You can show review that customer gives to you</li>
+    <li>Business summery</li>
+    <li>Separate admin and user dashboard</li>
+</ul>
 
+<h3>Technology used<h3>
+
+<ul>
+    <li>React.js<li>
+    <li>Express.js<li>
+    <li>MongoDB<li>
+    <li>Tailwind css<li>
+    <li>Firebase for authentication<li>
+    <li>Heroku for server deploy<li>
+    <li>React query<li>
+<ul>
 ## Available Scripts
 
 In the project directory, you can run:
