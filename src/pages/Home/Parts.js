@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 
 
 
-const Parts = ({ parts, setParts }) => {
-    const { name, desc, img, price, minOrder, aQuantity, _id } = parts;
+const Parts = ({ parts }) => {
+    const { name, desc, img, price, minOrder, aQuantity } = parts;
 
     return (
         <>
-            <div class="card bg-base-100 h-auto my-auto rounded-none hover:shadow-xl">
-                <figure><img src={img} alt="parts" /></figure>
+
+            <div class="card bg-base-100 max-h-screen my-auto rounded-none hover:shadow-xl mb-24 lg:mb-0">
+                <figure><img className='w-64' src={img} alt="parts" /></figure>
                 <div class="card-body">
                     <h2 class="card-title text-neutral">
                         {name}
