@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-project live link [Create React App](https://car-daddy.web.app/).
+project live link [Car Daddy](https://car-daddy.web.app/).
 <h3>Project Description</h3>
 <ul>
     <li>You can able to make any order by this project</li>
