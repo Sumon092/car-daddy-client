@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import Review from './Review';
 
 const Reviews = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://cryptic-shelf-32962.herokuapp.com/reviews', {
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://car-daddy-server.vercel.app/reviews', {
     }).then(res => res.json()));
     if (isLoading) {
         return <Loading></Loading>

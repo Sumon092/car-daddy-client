@@ -5,7 +5,7 @@ const useAdmin = (user) => {
     const [adminLoading, setAdminLoading] = useState(true);
     const email = user.email;
     useEffect(() => {
-        fetch(`https://cryptic-shelf-32962.herokuapp.com/admin/${email}`, {
+        fetch(`https://car-daddy-server.vercel.app/admin/${email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

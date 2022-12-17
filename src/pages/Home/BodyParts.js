@@ -13,7 +13,7 @@ const BodyParts = () => {
     const [setParts] = useState(null);
 
     useEffect(() => {
-        const url = 'https://cryptic-shelf-32962.herokuapp.com/part'
+        const url = 'https://car-daddy-server.vercel.app/part'
         fetch(url, {
             method: 'GET',
             headers: {

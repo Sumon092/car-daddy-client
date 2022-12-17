@@ -24,7 +24,7 @@ const AddReview = () => {
             reviewText: data.reviewText
         }
 
-        fetch(`https://cryptic-shelf-32962.herokuapp.com/reviews`, {
+        fetch(`https://car-daddy-server.vercel.app/reviews`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -6,7 +6,7 @@ import Loading from '../pages/Shared/Loading';
 
 const ManageOrders = () => {
     const [user] = useAuthState(auth)
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://cryptic-shelf-32962.herokuapp.com/orders', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://car-daddy-server.vercel.app/orders', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
